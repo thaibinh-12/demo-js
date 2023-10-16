@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/sign.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form">
+        <div class="container">
+            <form action="">
+                <h3>Sign Up</h3>
+                <div class="form-group">
+                    <input type="text" id="hoten" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="sdt" class="form-control" placeholder="Number">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="username" class="form-control" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="gioitinh" class="form-control" list="options" placeholder="Gender">
+                    <datalist id="options">
+                        <option value="Female">
+                        <option value="Male">
+                        <option value="Other">
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <input type="date" name="" id="date" class="form-control">
+                </div>
+                <div class="form-submit">
+                    <button onclick="return check_dangky()">Sign up</button>
+                    <button onclick="nhaplai()">Again</button>
+                </div>
+                <!-- <div class="form-submit" style="margin-top: 20px;">
+                    <button onclick="nhaplai()">Again</button>
+                </div> -->
+                <div class="hoi">
+                    <span>Do you already have an account?
+                        <a href="login.html">Login</a>
+                    </span>
+                </div>
+            </form>
+            <div id="result">
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function check_dangky() {
+            var hoten = document.getElementById("hoten");
+            var sdt = document.getElementById("sdt");
+            var email = document.getElementById("email");
+            var gioitinh = document.getElementById("gioitinh");
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            var date = document.getElementById("date");
+
+
+            var checkhoten = /[a-zA-Z ]/;
+            var checksdt = /[0][0-9]{9}/;
+            var checkemail = /[a-zA-Z0-9]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2}/
+            if (hoten.value == "") {
+                alert("họ tên không đc để trống");
+                hoten.focus();
+                return false;
+            }
+            if (!checkhoten.test(hoten.value)) {
+                alert("họ tên không chứa ký tự số");
+                hoten.focus();
+                return false;
+            }
+
+            if (sdt.value == "") {
+                alert("sdt không đc để trống");
+                sdt.focus();
+                return false;
+            }
+            if (!checksdt.test(sdt.value)) {
+                alert("sdt bắt đầu =0 độ dài 10 số không chứa chữ");
+                sdt.focus();
+                return false;
+            }
+            if (email.value == "") {
+                alert("Email không đc để trống");
+                email.focus();
+                return false;
+            }
+            if (!checkemail.test(email.value)) {
+                alert("Email không hợp lệ");
+                email.focus();
+                return false;
+            }
+
+            if (username.value == "") {
+                alert("Tên đăng nhập không để trống");
+                username.focus();
+                return false;
+            }
+            if (username.value.length < 8) {
+                alert("Nhập tên đăng nhập >= 8 ký tự");
+                username.focus();
+                return false;
+            }
+
+
+            if (password.value == "") {
+                alert("Mật khẩu không được bỏ trống");
+                password.focus();
+                return false;
+            }
+            if (password.value.length < 8) {
+                alert("Nhập mât khẩu >= 8 ký tự");
+                password.focus();
+                return false;
+            }
+
+            if (gioitinh.value == "") {
+                alert("Giới tính không được bỏ trống.");
+                gioitinh.focus();
+                return false;
+            }
+            if (gioitinh.value !== "Nữ" && gioitinh.value !== "Nam" && gioitinh.value !== "LGBT") {
+                alert("Bạn chỉ có thể chọn giới tính trong danh sách.");
+                gioitinh.focus();
+                return false;
+            }
+            if (date.value == "") {
+                alert("Ngày sinh không đc bỏ trống")
+                date.focus();
+                return false;
+            }
+            if (hoten.value != "" && sdt.value != "" && email.value && gioitinh.value != "" && username.value != "" && password.value != "" && gioitinh.value != "") {
+                alert("Đăng ký thành công")
+            }
+
+        }
+        function nhaplai() {
+            alert("Vui lòng nhập lai")
+            document.getElementsByTagName("input").reset();
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@200&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=League+Spartan&family=Patrick+Hand&family=Poppins:wght@200&family=Satisfy&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/giohang.js"></script>
+    <title>MUSIC</title>
+</head>
+
+<body>
+    <div class="alert" id="alert">
+        <i class="fa-solid fa-check"></i>
+        <h4>Product has been added to your cart</h4>
+    </div>
+    <header>
+        <div class="menu">
+            <div class="logo">
+                <li><i class="fa-solid fa-signature fa-bounce"></i><span>SOUND VINYL</span></li>
+                <li><i class="fa-solid fa-bag-shopping icons" onclick="showCart()"></i><span class="icons"
+                        onclick="showCart()">BUY</span>
+                    <!-- <div class="cart">
+                        <div class="name">CART</div>
+                        <div class="listcarts"></div>
+                    </div> -->
+                </li>
+            </div>
+            <ul>
+                <li> <a href="">Home</a></li>
+                <li><a href="">Collection</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+        <div class="slideshow">
+            <img src="./assets/img/banner.jpeg" id="img-feature" alt="banner">
+        </div>
+        <div class="carousel-btn">
+            <button class="control-prev" onclick="prev()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="control-next" onclick="next()">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </header>
+    <article>
+        <div class="search">
+            <form action="action_page.php">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="googlesearch" placeholder="Tim kiem tai day">
+                <button>Search</button>
+            </form>
+        </div>
+        <br>
+        <h2>Product</h2>
+        <br>
+        <div class="list">
+            <div class="product" data-key="1">
+                <div class="img">
+                    <img class="hover-image" src="./assets/img/product1.jpg" onmouseover="change(1,this)"
+                        onmouseout="change(2,this)" alt="pic1">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">OLIVIA RODRIGO - GUTS</div>
+                    <div class="price">$900</div>
+                    <br>
+                    <button class="add"
+                        onclick=" addToCard(1,'OLIVIA RODRIGO - GUTS', '900' , './assets/img/product1.jpg' )">Add
+                        to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="2">
+                <div class="img">
+                    <img class="hover-image" src="./assets/img/product2.jpg" onmouseover="changeImage(1,this)"
+                        onmouseout="changeImage(2,this)">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">SZA-KILL BILL</div>
+                    <div class="price">$800</div>
+                    <br>
+                    <button class="add" onclick="addToCard(2,'SZA-KILL BILL', '800', './assets/img/product2.jpg')">Add
+                        to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="3">
+                <div class="img">
+                    <img src="./assets/img/product3.jpg" onmouseover="img(1,this)" onmouseout="img(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">BANKS - SERPENTINA</div>
+                    <div class="sale-price">
+                        <div class="price_original">$990</div>
+                        <div class="price sale">$790</div>
+                    </div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(3,'BANKS - SERPENTINA', '790', './assets/img/product3.jpg')">Add to
+                        cart</button>
+                    <div class="flashsale">Flash sale
+                        <span id="timer" class="timer">5:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product" data-key="4">
+                <div class="img">
+                    <img src="./assets/img/product4.jpg" onmouseover="chuyenanh(1,this)" onmouseout="chuyenanh(2,this)"
+                        alt="hinh anh">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">YEULE - SEROTONIN II</div>
+                    <div class="price">$680</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(4,'YEULE - SEROTONIN II', '680', './assets/img/product1.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="list2">
+            <div class="product" data-key="5">
+                <div class="img">
+                    <img src="./assets/img/product5.jpg" onmouseover="chuyenhinhanh(1,this)"
+                        onmouseout="chuyenhinhanh(2,this)" alt="">
+                </div>
+                <div class=" content">
+                    <br>
+                    <div class="title">ED SHEERAN - SUBTRACT</div>
+                    <div class="sale-price">
+                        <div class="price_original">$990</div>
+                        <div class="price sale">$750</div>
+                    </div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(5,'ED SHEERAN - SUBTRACT', '750', './assets/img/product5.jpg')">Add to
+                        cart</button>
+                    <div class="flashsale">Flash sale
+                        <span id="timer1" class="timer">5:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product" data-key="6">
+                <div class="img">
+                    <img src="./assets/img/product6.jpg" onmouseover="changethis(1,this)"
+                        onmouseout="changethis(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">YEULE - SEROTONIN II</div>
+                    <div class="price">$800</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(6,'YEULE - SEROTONIN II', '800', './assets/img/product6.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="7">
+                <div class="img">
+                    <img src="./assets/img/product7.jpg" onmouseover="chuyenanh(1,this)" onmouseout="chuyenanh(2,this)"
+                        alt="">
+                </div>
+                <div class=" content">
+                    <br>
+                    <div class="title">PINK - TRUSTFALL</div>
+                    <div class="price">$850</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(7,'PINK - TRUSTFALL', '850', './assets/img/product7.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+            <div class="product" data-key="8">
+                <div class="img">
+                    <img src="./assets/img/product8.jpg" onmouseover="chuyendoihinhanh(1,this)"
+                        onmouseout="chuyendoihinhanh(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">COLDPLAY - GHOST STORIES</div>
+                    <div class="price">$800</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(8,'COLDPLAY - GHOST STORIES', '800', './assets/img/product8.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="banner1">
+            <div class="ban">
+                <img src="./assets/img/silde.jpg" onmouseover="bannerchange(1,this)" onmouseout="bannerchange(2,this)"
+                    alt="">
+            </div>
+        </div>
+        <div class="list2">
+            <div class="product" data-key="5">
+                <div class="img">
+                    <img src="./assets/img/product9.jpg" onmouseover="imgchange(1,this)" onmouseout="imgchange(2,this)"
+                        alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">ED SHEERAN - SUBTRACT</div>
+                    <div class="price">$750</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(9,'ED SHEERAN - SUBTRACT', '750', './assets/img/product9.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="6">
+                <div class="img">
+                    <img src="./assets/img/box10.jpeg" onmouseover="imagechange(1,this)"
+                        onmouseout="imagechange(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">YEULE - SEROTONIN II</div>
+                    <div class="price">$800</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(10,'YEULE - SEROTONIN II', '800', './assets/img/box10.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="7">
+                <div class="img">
+                    <img src="./assets/img/product11.jpg" onmouseover="imageechange(1,this)"
+                        onmouseout="imageechange(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">PINK - TRUSTFALL</div>
+                    <div class="price">$850</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(11,'PINK - TRUSTFALL', '850', './assets/img/product11.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="8">
+                <div class="img">
+                    <img src="./assets/img/product12.jpg" onmouseover="anhchange(1,this)" onmouseout="anhchange(2,this)"
+                        alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">COLDPLAY - GHOST STORIES</div>
+                    <div class="price">$800</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(12,'COLDPLAY - GHOST STORIES', '800', './assets/img/product12.jpg')">Add
+                        to
+                        cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="list2">
+            <div class="product" data-key="5">
+                <div class="img">
+                    <img src="./assets/img/box13.jpg" onmouseover="imgchange13(1,this)" onmouseout="imgchange13(2,this)"
+                        alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">ED SHEERAN - SUBTRACT</div>
+                    <div class="price">$750</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(13,'ED SHEERAN - SUBTRACT', '750', './assets/img/box13.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="6">
+                <div class="img">
+                    <img src="./assets/img/product14.jpg" onmouseover="imgchange14(1,this)"
+                        onmouseout="imgchange14(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">YEULE - SEROTONIN II</div>
+                    <div class="price">$800</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(14,'YEULE - SEROTONIN II', '800', './assets/img/product14.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="7">
+                <div class="img">
+                    <img src="./assets/img/product15.jpg" onmouseover="imgchange15(1,this)"
+                        onmouseout="imgchange15(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">PINK - TRUSTFALL</div>
+                    <div class="price">$850</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(15,'PINK - TRUSTFALL', '850', './assets/img/product15.jpg')">Add to
+                        cart</button>
+                </div>
+            </div>
+
+            <div class="product" data-key="8">
+                <div class="img">
+                    <img src="./assets/img/product16.jpg" onmouseover="imgchange16(1,this)"
+                        onmouseout="imgchange16(2,this)" alt="">
+                </div>
+                <div class="content">
+                    <br>
+                    <div class="title">COLDPLAY - GHOST STORIES</div>
+                    <div class="price">$800</div>
+                    <br>
+                    <button class="add"
+                        onclick="addToCard(16,'COLDPLAY - GHOST STORIES', '800', './assets/img/product16.jpg')">Add
+                        to
+                        cart</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="sign">
+            <button><a href="./signup.html">Sign Up</a></button>
+            <button><a href="./login.html">Login</a></button>
+        </div>
+
+    </article>
+    <footer>
+        <div class="infor">
+            <ul>
+                <li>Address: 95A Nguyen Van Huyen Tan Thanh Tan Phu</li>
+                <li>Email: soundvinyl.buss@gmail.com</li>
+            </ul>
+            <div class="btn">
+                <label for="">Language</label>
+                <input list="browsers" name="browser" id="browser">
+                <datalist id="browsers">
+                    <option value="english">
+                    <option value="vietnam">
+                    <option value="china">
+                    <option value="italy">
+                    <option value="france">
+                </datalist>
+                <button>add</button>
+            </div>
+        </div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7858.163730330867!2d105.7910172!3d10.010096599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1691083068979!5m2!1svi!2s"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="foot">
+            <i class="fa-solid fa-signature fa-bounce"></i>
+            sound vinyl
+        </div>
+    </footer>
+    <article class="cart" id="cart">
+        <div class="cart-container">
+            <div class="cart-list" id="cart-list">
+                <div class="cart-title">
+                    <h3>Product</h3>
+                    <h3>Price</h3>
+                    <h3>Quantity</h3>
+                    <h3>Total</h3>
+                </div>
+                <div class="cart-body">
+                </div>
+            </div>
+            <div class="cart-total">
+                <div class="cart-total-price">
+                    <h3>Cart Total</h3>
+                    <h3>$<span id="totalPrice"></span></h3>
+                    <i class="fa-solid fa-xmark close" onclick="hiddenCart()"></i>
+                </div>
+                <h4>Shipping free</h4>
+
+                <a class="playstore-button" href="#">
+                    <div class="btn-grp">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="texts">
+                            <span class="text-1">Check out</span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </article>
+
+</body>
+
+</html>

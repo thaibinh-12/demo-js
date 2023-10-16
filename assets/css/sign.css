@@ -1,0 +1,85 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+body{
+    background-color: #cecccf;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+form {
+    line-height: 50px;
+    background-color: #f1f1f1;
+    width: 800px;
+    border-radius: 10px;
+}
+form h3{
+    text-align: center;
+    color: #333;
+    font-size: 23px;
+}
+.form-group{
+    text-align: center;
+}
+.form-group ::placeholder{
+    padding: 10px;
+}
+.form-group input{
+    width: 500px;
+    height: 40px;
+    margin-bottom: 30px;
+    padding-left: 17px;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 25px;
+}
+.form-submit{
+    display: flex;
+    justify-content: center;
+}
+.form-submit button{
+    width: 120px;
+    height: 35px;
+    margin-right: 20px;
+
+}
+.form-submit button {
+    width: 9em;
+    color: #333;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.form-submit button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #5900ce 0%, #31275e 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.form-submit button:hover::before {
+    width: 9em;
+}
+.hoi{
+    text-align: center;
+    line-height: 60px;
+}

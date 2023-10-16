@@ -1,0 +1,127 @@
+.cart{
+    width: 90%;
+    display: none;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 30px;
+    position: fixed;
+    top: 60px;
+    left: 5%;
+    z-index: 999999999;
+}
+.cart-container{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    height: 75vh;
+}
+.cart-list{
+    width: 70%;
+    padding: 20px;
+    overflow-y: auto;
+
+}
+.cart-total{
+    width: 30%;
+    background-color: #584f97;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.cart-title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #584f97;
+}
+.cart-body{
+    margin-left: -30px;
+    overflow-y: auto;
+}
+.cart-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+.cart-item img{
+    width: 100px;
+}
+.cart-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cart-item h5{
+    font-size: 16px;
+}
+.quantity{
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.quantity i{
+    cursor: pointer;
+}
+.cart-total-price{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    color: white;
+
+}
+.cart-total h4{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+.playstore-button {
+    width: 200px;
+    height: 60px;
+    display: block;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.625rem 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    outline: 0;
+    transition: all  .2s ease;
+    text-decoration: none;
+    margin-top: 50px;
+  }
+  
+  .playstore-button:hover {
+    background-color: white;
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .texts {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .text-1 {
+    font-size: 20px;
+
+  }
+  
+  .btn-grp{
+    display: flex;
+    align-items: center;
+  }
+  .close{
+    cursor: pointer;
+  }
